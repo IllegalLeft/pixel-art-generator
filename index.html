@@ -7,7 +7,7 @@
         <script src="resize.js"></script>
         <script src="main.js"></script>
         <style type="text/css" media="screen">
-		canvas{padding:5px}div{padding:10px 0 15px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px}hr{border:none;border-top:1px solid orange}body{text-align:center}.mainTitle{font-family:Audiowide,sans-serif;font-size:2rem;margin:.2em;color:#c88}.chooseTitle{margin:1em 0 .25em}table,td,tr{border:1px solid #abc}table{border-collapse:collapse;margin:40px auto}tr{height:25px}td{width:25px}input[type=number]{width:3em;margin-right:10px}input[type=submit]{margin-right:2em}@media screen and (max-width:480px){.chooseTitle,.mainTitle{font-size:1.1rem;display:inline}table{margin:10px auto}tr{height:30px}td{width:30px}}			
+		canvas{padding:5px}div{padding:10px 0 15px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px}hr{border:none;border-top:1px solid orange}body{text-align:center}.mainTitle{font-family:Audiowide,sans-serif;font-size:2rem;margin:.2em;color:#c88}.chooseTitle{margin:1em 0 .25em}td,tr{border:1px solid #abc}table{border-collapse:collapse;margin:40px auto}tr{height:25px}td{width:25px}input[type=number]{width:3em;margin-right:10px}input[type=submit]{margin-right:2em}@media screen and (max-width:480px){.chooseTitle,.mainTitle{font-size:1.1rem;display:inline}table{margin:10px auto}tr{height:30px}td{width:30px}}
         </style>
     </head>
 
@@ -57,10 +57,19 @@ let width = document.getElementById("input_width");
 
 let mirroring_x = false;
 let mirror_x = document.getElementById("mirrorX");
-mirror_x.onclick = function (e) { mirroring_x = !mirroring_x; };
+mirror_x.onclick = function (e) {
+    mirroring_x = !mirroring_x;
+    let canvas = document.getElementById("pixel_canvas");
+    canvas.style.borderRight = canvas.style.borderRight === "2px solid red" ? "" : "2px solid red";
+};
+
 let mirroring_y = false;
 let mirror_y = document.getElementById("mirrorY");
-mirror_y.onclick = function (e) { mirroring_y = !mirroring_y; };
+mirror_y.onclick = function (e) {
+    mirroring_y = !mirroring_y;
+    let canvas = document.getElementById("pixel_canvas");
+    canvas.style.borderBottom = canvas.style.borderBottom === "2px solid red" ? "" : "2px solid red";
+};
 
 let not_grayscale = true;
 let not_grayscale_tick = document.getElementById("colorized");
