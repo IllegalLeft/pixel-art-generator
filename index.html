@@ -18,7 +18,7 @@
     <div class = "panel">
       <h1 class ="mainTitle">Pixel Art Generator</h1>
 
-      <h2 class = "chooseTitle">Choose Grid Size and Colors</h2>
+      <h2 class = "chooseTitle">Choose Grid Size</h2>
       <form id="sizePicker">
         <span class = "label">Rows: </span>
         <input type="number" required id="input_height" name="height" min="1" max="50" value="16">
@@ -32,15 +32,15 @@
  </p>
 </p>
        <p>
-          <label>Tools and brushes:</label>            
+          <label>Tools:</label>            
           <input type = "radio" name = "brush" id = "brush1" value = "-1"  checked = "checked" />
-          <label for = "brush1">border -1</label>
+          <label for = "brush1">Border</label>
           <input type = "radio" name = "brush" id = "brush2" value = "0" />
-          <label for = "brush2">empty 0</label>
+          <label for = "brush2">Empty</label>
           <input type = "radio" name = "brush" id = "brush3"  value = "1" />
-		  <label for = "brush3">body/empty 1</label>
+		  <label for = "brush3">Body 1</label>
           <input type = "radio" name = "brush" id = "brush4" value = "2" />
-          <label for = "brush4">body/border 2</label>
+          <label for = "brush4">Body 2</label>
         </p>   		
 
     </div>
@@ -180,7 +180,7 @@ let counter = 0;
             // Output
             div = document.createElement('div');
 			div.id = counter;
-            div.innerText = 'Generation '+counter;
+            div.innerText = 'Output '+counter;
             div.appendChild(document.createElement('hr'));
             
             for (i = 0; i < SPRITE_COUNT; i++) {
